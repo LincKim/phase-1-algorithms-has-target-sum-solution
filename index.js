@@ -1,9 +1,17 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  const seenNumbers = {}
+  for (const number of array) {
+    const otherNum = target - number
+    if (otherNum in seenNumbers) return true
+    seenNumbers[number] = true
+  }
+  return false
 }
 
 /* 
   Write the Big O time complexity of your function here
+  Runtime: O(n)
+  Space: O(n)
 */
 
 /* 
